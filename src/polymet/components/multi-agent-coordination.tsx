@@ -54,7 +54,7 @@ export function MultiAgentCoordination({
 
       {/* Stats Boxes */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="bg-muted/30 rounded-lg p-3">
+        <div className="bg-muted/30 rounded-lg p-3 text-center">
           <div className="text-2xl font-bold text-foreground">
             {stats.uniqueAgentsPerSession}
           </div>
@@ -62,7 +62,7 @@ export function MultiAgentCoordination({
             Unique Agents per Session
           </div>
         </div>
-        <div className="bg-muted/30 rounded-lg p-3">
+        <div className="bg-muted/30 rounded-lg p-3 text-center">
           <div className="text-2xl font-bold text-foreground">
             {stats.peakConcurrentAgents}
           </div>
@@ -70,7 +70,7 @@ export function MultiAgentCoordination({
             Peak Concurrent Agents
           </div>
         </div>
-        <div className="bg-muted/30 rounded-lg p-3">
+        <div className="bg-muted/30 rounded-lg p-3 text-center">
           <div className="text-2xl font-bold text-foreground">
             {stats.agentHandoffs}
           </div>

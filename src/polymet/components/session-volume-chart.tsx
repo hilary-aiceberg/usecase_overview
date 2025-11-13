@@ -18,7 +18,7 @@ interface SessionVolumeChartProps {
   stats: {
     peak: { value: number; date: string };
     average: number;
-    lowest: { value: number; date: string };
+    growth: { value: string; trend: string };
   };
 }
 
@@ -65,7 +65,7 @@ export function SessionVolumeChart({ data, stats }: SessionVolumeChartProps) {
       </ChartContainer>
 
       <div className="grid grid-cols-3 gap-4 mt-6">
-        <div className="bg-muted/50 rounded-lg p-3">
+        <div className="bg-muted/50 rounded-lg p-3 text-center">
           <div className="text-xs text-muted-foreground mb-1">Peak</div>
           <div className="text-lg font-bold text-foreground">
             {stats.peak.value}
@@ -74,20 +74,20 @@ export function SessionVolumeChart({ data, stats }: SessionVolumeChartProps) {
             on {stats.peak.date}
           </div>
         </div>
-        <div className="bg-muted/50 rounded-lg p-3">
+        <div className="bg-muted/50 rounded-lg p-3 text-center">
           <div className="text-xs text-muted-foreground mb-1">Average</div>
           <div className="text-lg font-bold text-foreground">
             {stats.average}
           </div>
           <div className="text-xs text-muted-foreground">per day</div>
         </div>
-        <div className="bg-muted/50 rounded-lg p-3">
-          <div className="text-xs text-muted-foreground mb-1">Lowest</div>
-          <div className="text-lg font-bold text-foreground">
-            {stats.lowest.value}
+        <div className="bg-muted/50 rounded-lg p-3 text-center">
+          <div className="text-xs text-muted-foreground mb-1">Growth</div>
+          <div className="text-lg font-bold text-green-500">
+            {stats.growth.value}
           </div>
           <div className="text-xs text-muted-foreground">
-            on {stats.lowest.date}
+            {stats.growth.trend}
           </div>
         </div>
       </div>

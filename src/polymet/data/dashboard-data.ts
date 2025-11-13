@@ -2,7 +2,7 @@ export interface MetricData {
   value: number | string;
   label: string;
   change: string;
-  changeType: "positive" | "negative";
+  changeType: "positive" | "negative" | "negative-up";
 }
 
 export interface SessionVolumeData {
@@ -81,27 +81,27 @@ export interface AutonomyScore {
 export const topMetrics: MetricData[] = [
   {
     label: "Sessions",
-    value: 847,
-    change: "+18% vs last 7 days",
+    value: "4,847",
+    change: "+18%",
     changeType: "positive",
   },
   {
     label: "Success Rate",
     value: "94.2%",
-    change: "+2.1% vs last week",
+    change: "+2.1%",
     changeType: "positive",
   },
   {
     label: "Unique Users",
     value: "3,247",
-    change: "+12% vs last week",
+    change: "+12%",
     changeType: "positive",
   },
   {
     label: "Alerts Sent",
     value: 89,
-    change: "+15% vs last week",
-    changeType: "negative",
+    change: "+15%",
+    changeType: "negative-up",
   },
 ];
 
@@ -118,13 +118,13 @@ export const sessionVolumeData: SessionVolumeData[] = [
 export const sessionStats = {
   peak: { value: 780, date: "Nov 9" },
   average: 734,
-  lowest: { value: 650, date: "Nov 6" },
+  growth: { value: "+18%", trend: "week over week" },
 };
 
 export const policyData: PolicyData = {
   successRate: 94.2,
-  succeeded: 11817,
-  failed: 726,
+  succeeded: 4847,
+  failed: 292,
   failures: [
     { type: "Tool execution timeout", count: 87 },
     { type: "External API unavailable", count: 64 },
